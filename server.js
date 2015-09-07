@@ -2,10 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io').listen(http);
-var port = Number(process.env..OPENSHIFT_NODEJS_PORT || 8080);
-var address =  process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1"; // Listening to localhost if you run locally
-http.listen(port, address);
-
+var port = Number(process.env.PORT || 3000);
 
 app.use(express.static(__dirname + "/"));
 
