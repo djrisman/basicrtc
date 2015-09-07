@@ -14,5 +14,9 @@
     "start": "node server.js"
   },
   "author": "risman DJ",
-  "license": "ISC"
+  "license": "ISC",
+  
+  "engines": {
+    "node": "0.10.x"
+  }
 }
