@@ -10,33 +10,41 @@
 <script src="js/jquery-2.1.1.min.js"></script>
 <title>WebRTC client</title>
 
-<!-- <link rel='stylesheet' href='css/main.css' /> -->
+<link rel='stylesheet' href='css/main.css' />
 <style>
-#client-vid{
-width : 300px;
-height : 200px;
-}
+
 </style>
 </head>
 
 <body>
-
-<div id='container'>
-
-  <div id='videos'>
-    <video id='localVideo' autoplay muted></video>
-	                    <div id="client-vid">
-                        
+ <div id="wrapper">
+            
+                
+                    
+                    <div id="local">
+                        <div id="localv"><video id='localVideo' autoplay muted width="400px" heigth="300px"></div> 
+                                               
                     </div>
-	</div>
+					<div id="remote">
+                    <div id="remotev">
+                    </div>    
+                    </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+		<div id="chat-box">	
+		<h3>Chat Box</h3>		
+				<div id='textareas'>
+					<textarea id="dataChannelSend" disabled placeholder="Press Start, enter some text, then press Send."></textarea>
+					<textarea id="dataChannelReceive" disabled></textarea>
+		</div>
+			<button id="sendButton" disabled>Send</button>
 
-  <div id='textareas'>
-		<textarea id="dataChannelSend" disabled placeholder="Press Start, enter some text, then press Send."></textarea>
-		<textarea id="dataChannelReceive" disabled></textarea>
-	</div>
-
-  <button id="sendButton" disabled>Send</button>
-
+		</div>
+			
+			
+			
 </div>
 
 <script src='/socket.io/socket.io.js'></script>

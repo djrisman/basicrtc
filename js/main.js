@@ -422,11 +422,11 @@ function requestTurn(turn_url) {
 }
 
 function handleRemoteStreamAdded(event) {
-  console.log('Remote stream added.');
+  console.log('Remote stream added.' +remotepeer);
  if (isInitiator) {
-    $("#client-vid").append("<div id='"+remotepeer+"' class='small-vid'><div class='smallvid'><a onclick='mute(\""+remotepeer+"\")' class='pointer' id='aButton"+remotepeer+"'><img id='muteButton"+remotepeer+"' src='img/mic.png' class='microphone mute'></a><video id='client"+remotepeer+"' autoplay muted width='100%'></div><div class='username-con small'><div id='"+remotepeer+"showClientName' class='username-small overlay'>Name disini</div></div></div>");
+    $("#remotev").append("<div id='"+remotepeer+"' class='remotex'><video id='client"+remotepeer+"' autoplay muted width='100%'></div>");
   } else {
-    $("#client-vid").append("<div id='"+remotepeer+"' class='small-vid'><div class='smallvid'><a onclick='mute(\""+remotepeer+"\")' class='pointer' id='aButton"+remotepeer+"'><img id='muteButton"+remotepeer+"' src='img/mic.png' class='microphone'></a><video id='client"+remotepeer+"' autoplay width='100%'></div><div class='username-con small'><div id='"+remotepeer+"showClientName' class='username-small overlay'>Name disini</div></div></div>");
+    $("#remotev").append("<div id='"+remotepeer+"' class='remotex'><video id='client"+remotepeer+"' autoplay width='100%'></div>");
 }
 
 var remoteVideo = document.getElementById("client"+remotepeer);
