@@ -7,7 +7,7 @@ var receiveTextarea = document.getElementById("dataChannelReceive");
 
 sendButton.onclick = sendData;
 
-var totalclient = [];
+var allclientid = [];
 var disclient;
 var isChannelReady;
 var isInitiator;
@@ -106,25 +106,26 @@ socket.on('BecomeisInitiator', function(){
 
 
 
-socket.on('numClient', function (jumlahclient1){
-  document.getElementById("jumlahClient").innerHTML = jumlahclient1 + " User Online";
+socket.on('totuser', function (totus){
+  document.getElementById("totusers").innerHTML = totus + " User Online";
+  
  }); 
 
-socket.on('Disconnect peer', function(peer){
+socket.on('Disconnect peer', function(room, biru){
   //delete client(s) which disconnected from initiator's list
   if (isInitiator) {
-    console.log(totalclient);
-    disclient = peer;
-    var i = totalclient.indexOf(disclient);
+    console.log(allclientid);
+    disclient = biru;
+    var i = allclientid.indexOf(disclient);
     if(i != -1) {
-      totalclient.splice(i, 1);
+      allclientid.splice(i, 1);
     }
   
     handleRemoteHangup();
     $("#"+disclient).detach();
-    socket.emit("numClient", room, (Object.keys(totalclient).length + 1));
-    console.log(Object.keys(totalclient).length + 1);
-    document.getElementById("jumlahClient").innerHTML = (Object.keys(totalclient).length + 1) + " User Online";   
+    socket.emit("numClient", room, (Object.keys(allclientid).length + 1));
+    console.log(Object.keys(allclientid).length + 1);
+    document.getElementById("totusers").innerHTML = (Object.keys(allclientid).length + 1) + " User Online";   
   };  
 });
 
@@ -227,9 +228,9 @@ function sendData(data,typeSending,idDestination){
   console.log("delivery destination "+idDestination);
   switch (typeSending){
     case 'all':
-      for (var i = 0; i < totalclient.length; i++) {
-        if (totalclient[i] != idDestination) {
-          sendChannel[totalclient[i]].send(data);  
+      for (var i = 0; i < allclientid.length; i++) {
+        if (allclientid[i] != idDestination) {
+          sendChannel[allclientid[i]].send(data);  
         } 
       }
     break;
@@ -456,7 +457,7 @@ function stop() {
   //isStarted = false;
   // isAudioMuted = false;
   // isVideoMuted = false;
- console.log ('peer outnya: ' +disclient);
+ console.log ('user_id yang keluar: ' +disclient);
   pc[disclient].close();
   pc[disclient] = null;
 }
