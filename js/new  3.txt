@@ -1,6 +1,0 @@
-peerout = disclient
-allclientid = totalclient
-roomowner1 = roominit
-roomowner = initator
-peertarget1 = remotepeer
-peertarget = peeremote
