@@ -26,6 +26,10 @@ body{
 	float: left;
 }
 
+#totusers{
+float:center;
+text-align:center;
+}
 
 #local{
 	border:solid 1px green;
