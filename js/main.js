@@ -50,7 +50,7 @@ if (room === '') {
 room = prompt('Enter room name:');  
 } 
 
-var socket = io.connect();
+var socket = io.connect('//mighty-castle-7180.herokuapp.com:80');
 
 
 
