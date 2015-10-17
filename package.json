@@ -1,12 +1,12 @@
 {
-  "name": "basicrtc",
+  "name": "rtc",
   "version": "1.0.0",
-  "description": "tesji",
+  "description": "test",
   "main": "server.js",
   "dependencies": {
-    "node-static": "*",
+    "socket.io": "*",
     "express": "*",
-    "socket.io": "*"
+    "node-static": "*"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,7 +15,6 @@
   "engines": {
     "node": "4.1.1"
   },
-  "author": "DJ Risman",
-  "license": "ISC",
-  
+  "author": "djrisman",
+  "license": "ISC"
 }
