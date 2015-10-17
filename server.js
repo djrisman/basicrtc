@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var socket = require('socket.io');
-var port = Number(process.env.PORT || 5000);
+var port = process.env.PORT || 4000;
 
 app.configure(function(){
   app.use(express.static(__dirname + '/'));
