@@ -6,7 +6,6 @@
   "dependencies": {
     "node-static": "*",
     "express": "*",
-    "ws": "*",
     "socket.io": "*"
   },
   "devDependencies": {},
