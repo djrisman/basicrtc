@@ -1,13 +1,17 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io').listen(http);
+var socket = require('socket.io');
 var port = Number(process.env.PORT || 5000);
 
-app.use(express.static(__dirname + "/"));
+app.configure(function(){
+  app.use(express.static(__dirname + '/'));
+});
+
+var server = app.listen(port);
+var io = socket.listen(server);
 
 io.set('log level', 1); // reduce logging
-io.on('connection', function (socket){
+io.sockets.on('connection', function (socket){
 
   socket.on('message', function (message,room) {
 		socket.broadcast.to(room).emit('message', message); // should be room only
@@ -47,6 +51,4 @@ io.on('connection', function (socket){
 });
 
 
-http.listen(port, function(){
-  console.log('listening on *:5000');
-});
+

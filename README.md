@@ -1,2 +1,0 @@
-# basicrtc
-tesji
