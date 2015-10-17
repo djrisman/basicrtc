@@ -10,7 +10,7 @@ app.configure(function(){
 var server = app.listen(port);
 var io = socket.listen(server);
 
-io.set('log level', 1); // reduce logging
+
 io.sockets.on('connection', function (socket){
 
   socket.on('message', function (message,room) {
@@ -48,7 +48,7 @@ io.sockets.on('connection', function (socket){
 		socket.broadcast.to(room).emit('totuser', numClients);
 	});
 
-});
+return});
 
 
 
