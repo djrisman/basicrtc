@@ -16,5 +16,13 @@
     "node": "4.1.1"
   },
   "author": "djrisman",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djrisman/basicrtc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/djrisman/basicrtc/issues"
+  },
+  "homepage": "https://github.com/djrisman/basicrtc#readme"
 }
