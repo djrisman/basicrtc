@@ -26,9 +26,9 @@ var ClientConnect = false;
 var pc_config = 
   {'iceServers': [{'url': 'stun:stun.l.google.com:19302'},
 {
-    url: 'turn:192.158.29.39:3478?transport=udp',
-    credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-    username: '28224511:1379330808'
+    url: 'turn:turn.bistri.com:80',
+            credential: 'homeo',
+            username: 'homeo'
 }
   ]};
   
@@ -50,7 +50,7 @@ if (room === '') {
 room = prompt('Enter room name:');  
 } 
 
-var socket = io.connect('//mighty-castle-7180.herokuapp.com:80');
+var socket = io.connect();
 
 
 
@@ -65,7 +65,7 @@ socket.on('created', function (room, initiator){
   isInitiator = true;
   console.log('This peer is the initiator of room :' + room);
   roominit = initiator;
-  console.log('room owner:' + roominit);
+  console.log('room initiator:' + roominit);
   isInitiator = true;
 });
 
@@ -179,6 +179,7 @@ function handleUserMedia(stream) {
   }
 }
 
+
 function handleUserMediaError(error){
   console.log('getUserMedia error: ', error);
 }
@@ -186,6 +187,9 @@ function handleUserMediaError(error){
 var constraints = {video: true};
 
 getUserMedia(constraints, handleUserMedia, handleUserMediaError);
+
+
+
 console.log('Getting user media with constraints', constraints);
 
 

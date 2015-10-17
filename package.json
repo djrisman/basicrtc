@@ -1,22 +1,22 @@
 {
-  "name": "skripsi",
-  "version": "0.0.1",
-  "description": "skripsi app",
+  "name": "basicrtc",
+  "version": "1.0.0",
+  "description": "tesji",
   "main": "server.js",
   "dependencies": {
-    "socket.io": "~0.9.17",
-    "node-static": "~0.7.7",
-    "express": "~3.4.8"
+    "node-static": "*",
+    "express": "*",
+    "ws": "*",
+    "socket.io": "*"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "risman DJ",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "author": "DJ Risman",
   "license": "ISC",
   
-  "engines": {
-    "node": "0.10.x"
-  }
 }
